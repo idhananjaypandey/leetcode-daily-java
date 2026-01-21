@@ -3,13 +3,11 @@
 class Solution {
   public int[] minBitwiseArray(List<Integer> nums) {
     int[] ans = new int[nums.size()];
-
     for (int i = 0; i < nums.size(); ++i)
       ans[i] = nums.get(i) == 2 ? -1 : nums.get(i) - getLeadingOneOfLastGroupOfOnes(nums.get(i));
 
     return ans;
   }
-
   private int getLeadingOneOfLastGroupOfOnes(int num) {
     int leadingOne = 1;
     while ((num & leadingOne) > 0)
@@ -17,3 +15,5 @@ class Solution {
     return leadingOne >> 1;
   }
 }
+
+// 3315. Construct the Minimum Bitwise Array II
