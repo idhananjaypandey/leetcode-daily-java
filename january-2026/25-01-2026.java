@@ -1,7 +1,9 @@
 // 1984. Minimum Difference Between Highest and Lowest of K Scores
 
-class Solution {
-  public int minimumDifference(int[] nums, int k) {
+class Solution 
+{
+  public int minimumDifference(int[] nums, int k)
+  {
     Arrays.sort(nums);
 
     int ans = nums[k - 1] - nums[0];
