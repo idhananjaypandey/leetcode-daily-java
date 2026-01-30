@@ -6,12 +6,10 @@ class Solution {
     Set<Integer> subLengths = getSubLengths(original);
     Map<String, Integer> subToId = getSubToId(original, changed);
     final int subCount = subToId.size();
-    // dist[u][v] := the minimum distance to change the substring with id u to
-    // the substring with id v
+   
     long[][] dist = new long[subCount][subCount];
     Arrays.stream(dist).forEach(A -> Arrays.fill(A, Long.MAX_VALUE));
-    // dp[i] := the minimum cost to change the first i letters of `source` into
-    // `target`, leaving the suffix untouched
+  
     long[] dp = new long[source.length() + 1];
     Arrays.fill(dp, Long.MAX_VALUE);
 
